@@ -1,0 +1,105 @@
+@use "reset";
+@use 'globals';
+@use 'typography';
+@use "page";
+@use "components";
+
+.top-bar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.hero_main {
+    padding-top: 38px;
+
+    @media only screen and (min-width: 600px) {
+        max-width: 60%;
+        min-height: 540px;
+    }
+
+    @media only screen and (min-width: 735px) {
+        margin-top: calc(0.12*calc(100vw - 735px));
+    }
+}
+
+
+.hero_title {
+    margin-top: 38px;
+    margin-bottom: 26px;
+
+    @media only screen and (min-width: 600px) {
+        margin-top: 100px;
+    }
+
+    @media only screen and (min-width: 681px) {
+        margin-top: max(0px, 100px + 0.05 * calc(100vw - 681px));
+    }
+
+    @media only screen and (min-width: 789px) {
+        margin-top: 108px;
+    }
+}
+
+.hero_body {
+    margin-bottom: 24px;
+}
+
+.hero_bg-image__sm {
+    background-image: url("../assets/image-hero-mobile@2x.png");
+    width: 100%;
+    height: calc(100vw*1.2*0.94);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 120%;
+    margin: 0 auto;
+
+    @media only screen and (min-width: 600px) {
+        background-image: none;
+        height: 0;
+        width: 0;
+    }
+}
+
+
+.hero_bg-image__md {
+    @media only screen and (min-width: 600px) {
+        background-image: url('../assets/image-hero-tablet@2x.png');
+        background-repeat: no-repeat;
+        --image-width: calc(600px);
+        --image-height: calc((1446/1390) * var(--image-width));
+        --alignment-point-as-ratio: calc((1390 - 400)/1390);
+        --alignment-point: calc(var(--alignment-point-as-ratio) * var(--image-width));
+        background-size: calc(var(--image-width));
+        background-position: bottom right calc(0px - var(--alignment-point) + 25vw);
+    }
+
+    @media only screen and (min-width: 735px) {
+        --image-width: calc(650px);
+        --image-height: calc((1446/1390) * var(--image-width));
+        --alignment-point-as-ratio: calc((1390 - 400)/1390);
+        --alignment-point: calc(var(--alignment-point-as-ratio) * var(--image-width));
+        background-size: calc(var(--image-width));
+        background-position: bottom right calc(0px - var(--alignment-point) + 20vw);
+    }
+}
+
+
+// @media only screen and (min-width: 735px) {
+//     .hero_content {
+//         margin-top: calc(0.12*calc(100vw - 735px));
+
+//     }
+
+//     .hero {
+//         --image-width: calc(650px);
+//         --image-height: calc((1446/1390) * var(--image-width));
+//         --alignment-point-as-ratio: calc((1390 - 400)/1390);
+//         --alignment-point: calc(var(--alignment-point-as-ratio) * var(--image-width));
+//         background-size: calc(var(--image-width));
+//         background-position: bottom right calc(0px - var(--alignment-point) + 20vw);
+//     }
+// }
