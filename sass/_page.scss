@@ -1,0 +1,21 @@
+@use 'variables';
+
+body {
+    padding-top: 1rem;
+}
+
+.page_horizontal-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media only screen and (min-width: variables.$break-point-md) {
+        padding-left: 39px;
+        padding-right: 39px;
+    }
+
+
+}
+
+.page {
+    margin-top: 1rem;
+}

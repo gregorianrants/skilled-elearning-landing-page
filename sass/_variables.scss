@@ -1,0 +1,6 @@
+//breaks to tablet size at md
+$break-point-md: 600px;
+//we adjust the tablet layout slightly at md-2
+//basically we make the image a bit bigger and start gradaully shifting the elements bellow top
+//bar down as viewport size increases
+$break-point-md-2: 735px;

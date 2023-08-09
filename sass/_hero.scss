@@ -1,0 +1,90 @@
+@use "variables";
+
+.hero {
+    //putting this at the top becuase we push down both 
+    --push-down: max(0px, calc(0.08 * calc(100vw - 735px)))
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.hero_main {
+    padding-top: 38px;
+
+    @media only screen and (min-width: variables.$break-point-md) {
+        padding-top: 1px;
+        max-width: min(500px, 60%);
+        min-height: 490px;
+    }
+
+    @media only screen and (min-width: variables.$break-point-md-2) {
+        --push-down-to-offset-increase-in-size-of-image: 30px;
+        //margin-top: 30px
+        margin-top: calc(var(--push-down-to-offset-increase-in-size-of-image) + var(--push-down));
+    }
+}
+
+
+
+.hero_title {
+    padding-top: 38px;
+    padding-bottom: 26px;
+
+    @media only screen and (min-width: variables.$break-point-md) {
+        padding-top: 70px;
+    }
+
+    @media only screen and (min-width: variables.$break-point-md-2) {
+        //padding-top: calc(70px + 0.12 * calc(100vw - 735px));
+        padding-top: calc(70px);
+    }
+}
+
+.hero_body {
+    margin-bottom: 24px;
+}
+
+.hero_bg-image__sm {
+    background-image: url("../assets/image-hero-mobile@2x.png");
+    width: 100%;
+    height: calc(100vw*1.2*0.94);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 120%;
+    margin: 0 auto;
+
+    @media only screen and (min-width: variables.$break-point-md) {
+        background-image: none;
+        height: 0;
+        width: 0;
+    }
+}
+
+
+.hero_bg-image__md {
+    @media only screen and (min-width: variables.$break-point-md) {
+        background-image: url('../assets/image-hero-tablet@2x.png');
+        background-repeat: no-repeat;
+        --image-width: calc(600px);
+        --image-height: calc((1446/1390) * var(--image-width));
+        --alignment-point-as-ratio: calc((1390 - 400)/1390);
+        --alignment-point: calc(var(--alignment-point-as-ratio) * var(--image-width));
+        background-size: calc(var(--image-width));
+        background-position: bottom right calc(0px - var(--alignment-point) + 23vw);
+    }
+
+    @media only screen and (min-width: variables.$break-point-md-2) {
+        --image-width: calc(650px);
+        --image-height: calc((1446/1390) * var(--image-width));
+        --alignment-point-as-ratio: calc((1390 - 400)/1390);
+        --alignment-point: calc(var(--alignment-point-as-ratio) * var(--image-width));
+        background-size: calc(var(--image-width));
+        background-position: bottom right calc(0px - var(--alignment-point) + 22vw);
+    }
+}
